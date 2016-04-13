@@ -42,30 +42,26 @@ public class ImageProcessor {
     }
 
     public boolean processImage(){
-        if(loadImage()) {
-            int imgWidth = sourceImage.getWidth();
-            int imgHeight = sourceImage.getHeight();
-            int changeX = delta / 2;
-            int changeY = delta / 2;
-            int radius = delta / 2;
-            int pixelColor;
-            int posX = 0;
-            int posY = 0;
-            graphic = sourceImage.createGraphics();
-            while (posY < imgHeight) {
-                while (posX < imgWidth) {
-                    pixelColor = sourceImage.getRGB(posX, posY);
-                    graphic.setColor(new Color(pixelColor));
-                    graphic.fillOval(posX, posY, radius, radius);
-                    posX = posX + changeX;
-                }
-                posY = posY + changeY;
-                posX = 0;
+        int imgWidth = sourceImage.getWidth();
+        int imgHeight = sourceImage.getHeight();
+        int changeX = delta / 2;
+        int changeY = delta / 2;
+        int radius = delta / 2;
+        int pixelColor;
+        int posX = 0;
+        int posY = 0;
+        graphic = sourceImage.createGraphics();
+        while (posY < imgHeight) {
+            while (posX < imgWidth) {
+                pixelColor = sourceImage.getRGB(posX, posY);
+                graphic.setColor(new Color(pixelColor));
+                graphic.fillOval(posX, posY, radius, radius);
+                posX = posX + changeX;
             }
-            return true;
-        } else {
-            return false;
+            posY = posY + changeY;
+            posX = 0;
         }
+        return true;
     }
 
 
