@@ -10,6 +10,7 @@ import java.io.File;
 
 /**
  * Created by gero on 4/13/2016.
+ * This will create the window for the user to set it up.
  */
 public class SetupWindow {
     private JButton browseButton;
