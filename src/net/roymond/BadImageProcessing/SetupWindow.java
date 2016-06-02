@@ -107,7 +107,7 @@ public class SetupWindow {
     }
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("The S***y Image Processor");
+        JFrame frame = new JFrame("The Bad Image Processor");
         frame.setContentPane(new SetupWindow().Setup_Window);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.pack();
