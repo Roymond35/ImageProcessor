@@ -19,7 +19,7 @@ public class ImageProcessor {
 
     public void exportFile(){
         long currentTime = System.currentTimeMillis();
-        String fileName = "shitty_" + String.valueOf(currentTime) + ".png";
+        String fileName = "bad_" + String.valueOf(currentTime) + ".png";
         File outputFile = new File(exportDir + "\\" + fileName);
 
         graphic.drawImage(sourceImage, null, 0, 0);
