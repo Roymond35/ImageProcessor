@@ -60,6 +60,8 @@ public class SetupWindow {
         clearButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                imagePath = "";
+                exportPath = "";
                 inputImagePath.setText("");
                 exportDirPath.setText("");
                 errorText.setText(" ");
