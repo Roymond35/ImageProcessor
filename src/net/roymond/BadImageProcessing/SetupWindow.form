@@ -22,7 +22,7 @@
             </constraints>
             <properties>
               <font name="Comic Sans MS" size="22" style="1"/>
-              <text value="The S***y Image Processor"/>
+              <text value="The Bad Image Processor"/>
             </properties>
           </component>
         </children>
