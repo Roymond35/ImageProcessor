@@ -23,6 +23,8 @@ public class SetupWindow {
     private JButton exportDirButton;
     private JButton exportButton;
     private JLabel errorText;
+    private JLabel deltaValue;
+    private JButton clearButton;
 
     String imagePath = "";
     String exportPath = "";
@@ -30,6 +32,9 @@ public class SetupWindow {
     boolean status;
 
     public SetupWindow(){
+
+        deltaValue.setText(String.valueOf(deltaSlider.getValue()));
+        errorText.setText(" ");
 
         browseButton.addActionListener(new ActionListener() {
             @Override
@@ -49,6 +54,15 @@ public class SetupWindow {
                     System.out.println("You chose to open this file: " +
                             chooser.getSelectedFile().getName());
                 }
+            }
+        });
+
+        clearButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                inputImagePath.setText("");
+                exportDirPath.setText("");
+                errorText.setText(" ");
             }
         });
 
@@ -76,6 +90,7 @@ public class SetupWindow {
             @Override
             public void stateChanged(ChangeEvent e) {
                 desiredDelta = deltaSlider.getValue();
+                deltaValue.setText(String.valueOf(desiredDelta));
             }
         });
 
@@ -97,9 +112,11 @@ public class SetupWindow {
                     imageProcessor.loadImage();
                     imageProcessor.processImage();
                     imageProcessor.exportFile();
+                    errorText.setText("All Complete!");
                 } catch (Exception exc){
                     errorText.setText("An error has occurred");
                 }
+
 
             }
         });
